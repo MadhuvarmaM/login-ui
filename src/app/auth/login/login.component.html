@@ -1,0 +1,31 @@
+<div class="d-flex justify-content-center align-items-center vh-100 bg-light">
+  <div class="card shadow p-4" style="width: 100%; max-width: 400px;">
+    <h3 class="text-center mb-4">Login</h3>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+      <mat-form-field appearance="fill" class="w-100 mb-3">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" formControlName="email" />
+        <mat-error *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid">
+          A valid email is required.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="w-100 mb-3">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password" />
+        <mat-error *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid">
+          Password is required.
+        </mat-error>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" class="w-100" [disabled]="loginForm.invalid">Login</button>
+    </form>
+    <div class="text-center">
+      <span >Don't have an account?</span>
+      <a href="/auth/signup">Sign up here</a>
+    </div>
+  </div>
+
+</div>

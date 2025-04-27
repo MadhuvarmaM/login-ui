@@ -1,0 +1,13 @@
+<div class="flex h-screen">
+    <aside class="w-64 bg-gray-800 text-white p-4">
+        <h2 class="text-lg font-bold mb-6">Dashboard</h2>
+        <nav class="space-y-2">
+            <a routerLink="/dashboard" class="block p-2 hover:bg-gray-700 rounded">Home</a>
+            <a (click)="logout()" class="block p-2 hover:bg-gray-700 rounded cursor-pointer">Logout</a>
+        </nav>
+    </aside>
+    <main class="flex-1 p-6 bg-gray-100">
+        <h1 class="text-2xl font-bold mb-4">Welcome to the Dashboard</h1>
+        <p>This route is protected and only visible for admin.</p>
+    </main>
+</div>
